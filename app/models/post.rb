@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user, index: { unique: true }, foreign_key: true
+  belongs_to :user
   has_many :comments
   has_many :likes
 
