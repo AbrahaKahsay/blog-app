@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Abraha', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Ethiopia.') }
-  before { subject.save }
+  subject do
+    User.new(name: 'Abraha', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Ethiopia.')
+  end
+
+  before do
+    subject.save
+  end
 
   it 'should ensure name presence' do
     subject.name = nil
