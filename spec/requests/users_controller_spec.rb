@@ -15,5 +15,9 @@ RSpec.describe "UsersControllers", type: :request do
     it "assigns all users to @users" do
       expect(assigns(:users)).to eq(User.all)
      end
+
+     it 'matches the placeholder text with the respone body' do
+      expect(response.body).to include 'Here is a list of users with name'
+    end
   end
 end
