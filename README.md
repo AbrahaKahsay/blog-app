@@ -1,5 +1,7 @@
 # README
 
+**Blog App [![Ruby on Rails][]][7.0.4]**
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
