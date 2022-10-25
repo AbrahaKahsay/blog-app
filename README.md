@@ -1,24 +1,76 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog app
 
-Things you may want to cover:
+> The Blog app will be a classic example of a blog website. I will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* Ruby version
 
-* System dependencies
+## Built With :hammer_and_wrench:
 
-* Configuration
+- Major languages: Ruby
+- Frameworks: Ruby on Rails
+- Technologies used: Rubocop, gem, Postgresql
 
-* Database creation
+## Live Demo (if available)
 
-* Database initialization
+[Live Demo Link](https://livedemo.com)
 
-* How to run the test suite
+## Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+To use this project:
+- Open terminal
+- Clone it in your directory using
+git clone https://github.com/AbrahaKahsay/blog-app.git
+- Then cd blog-app
 
-* Deployment instructions
+## Create, drop and, reset a database
 
-* ...
+- rails db:create
+- rails db:drop
+- rails db:reset
+
+## Starting up the webserver
+
+- rails s # or
+- rails server
+## Generate schema
+
+- rails db:migrate
+
+## Generate model and controller specs
+
+-rails generate rspec:model  ModelName
+-rails generate rspec:controller ControllerName
+
+## Run specs or tests
+- bin/rails spec or rspec
+
+## Authors :writing_hand: :busts_in_silhouette:
+
+:man_technologist: **Abraha Kahsay** :writing_hand:
+
+- GitHub: [@AbrahaKahsay](https://github.com/AbrahaKahsay)
+- Twitter: [@abraha_ka](https://twitter.com/abraha_ka)
+- LinkedIn: [abraha-kahsay](https://www.linkedin.com/in/abraha-kahsay/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
