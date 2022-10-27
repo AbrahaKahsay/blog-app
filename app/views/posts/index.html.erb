@@ -13,7 +13,7 @@
         <%end%>
     </div>
     <div class="comments">
-         <% post.recent_five_comments.each do |comment| %>
+         <% @posts.each do |comment| %>
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
