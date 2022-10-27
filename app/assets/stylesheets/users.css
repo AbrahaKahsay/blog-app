@@ -1,0 +1,26 @@
+.user-image {
+  width: 100px;
+  height: 100px;
+}
+
+.users-list {
+  display: flex;
+  align-items: center;
+
+  /* justify-content: space-around; */
+  flex-direction: row;
+}
+
+.image {
+  display: flex;
+  flex-grow: 0.5;
+}
+
+.user-info {
+  display: flex;
+  gap: 10%;
+  align-items: center;
+  flex-grow: 2;
+  border: 1px solid black;
+  padding: 0 12px;
+}
