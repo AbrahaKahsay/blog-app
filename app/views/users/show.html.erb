@@ -1,1 +1,25 @@
-<p>Here is a list of users with given id</p>
+<section class="card">
+   <div class="user-detail">
+      <div class="image">
+        <img class="user-image" src="<%= @user.photo %>" alt="user photo">
+      </div>
+      <div class="user-info">
+        <h1 class="user-name"><%= @user.name %></h1>
+        <h3 class="post-count">Number of posts: <%= @user.posts_counter %></h3>
+      </div>
+    </div>
+    <div class="bio">
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+    </div>
+    <div id="posts">
+        <%@posts.each do |post|%>
+            <%= render 'shared/post', post: post%>
+        <%end%>
+    </div>
+    <div class="button-user">
+        <button class="button">
+          <%= link_to "See all posts", user_posts_path(@user) %>
+        </button>
+    </div>
+</section>
