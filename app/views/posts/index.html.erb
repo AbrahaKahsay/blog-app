@@ -14,7 +14,8 @@
     </div>
     <div class="comments">
          <% post.recent_five_comments.each do |comment| %>
-            <p><%= comment.author.name%> : <%= comment.text %> </p>
+            <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
+    <button type='submit'>Pagination</button>
 </div>
