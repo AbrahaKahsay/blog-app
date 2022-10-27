@@ -13,7 +13,7 @@
         <p><%= @user.bio %></p>
     </div>
     <div id="posts">
-        <%@posts.each do |post|%>
+        <%@user.recent_three_posts.each do |post|%>
             <%= render 'shared/post', post: post%>
         <%end%>
     </div>
