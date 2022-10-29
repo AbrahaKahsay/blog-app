@@ -1,27 +1,25 @@
 class CommentsController < ApplicationController
-    def index
-    end
+  def new
+    @comment = Comment.new
+    @user = current_user
+  end
 
-    def new
-        @comment= Comment.new
-    end
+  def create
+    comment = Comment.new(comment_params)
+    comment.user_id = current_user.id
+    comment.post_id = params[:post_id]
 
-    def create
-        @post = Post.find(params[:post_id])
-        @comment = @post.comments.new(comment_params)
-        if @comment.save
-          flash[:success] = "Comment successfully created"
-          redirect_to user_post_comments_path
-        else
-          flash[:error] = "Something went wrong"
-          render 'new'
-        end
+    if comment.save
+      redirect_to user_post_path(params[:user_id], params[:post_id])
+    else
+      flash[:error] = 'Error in saving comment'
+      render 'new'
     end
-    
-    private
+  end
 
-    def comment_params
-        params.require(:comment).permit(:user_id, :post_id, :text)
-    end
-    end
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
+  end
 end

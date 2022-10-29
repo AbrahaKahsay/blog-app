@@ -1,6 +1,6 @@
 <h1>Create a Post </h1>
 
-    <%= form_with model: @post, url: new_user_post_path do |form| %>
+    <%= form_with model: [@user, @post] do |form| %>
 
         <div class="p-title" >
             <%= form.label :title %>
