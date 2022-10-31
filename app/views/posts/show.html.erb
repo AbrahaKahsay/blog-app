@@ -2,6 +2,9 @@
     <div class="post-user-info">
       <p>Post : <%= @post.title %> by <%= @post.user.name %></p>
       <p>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
+     <div class="add-comment">
+        <a href="<%= params[:id] %>/comments/new">Add Comment</a>
+      </div>
      <div class="button">
         <%= form_with url: user_post_likes_path(post_id: @post.id), method: :post do |form| %>
           <%= form.submit 'Like', class: 'btn' %>
@@ -14,7 +17,4 @@
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
-    <div class="add-comment">
-        <a href="<%= params[:id] %>/comments/new">Add Comment</a>
-      </div>
   </div>
