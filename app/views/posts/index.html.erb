@@ -7,6 +7,9 @@
         <h3 class="post-count">Number of posts: <%= @user.posts_counter %></h3>
       </div>
     </div>
+    <div class="add-new-form">
+      <%= link_to "Add New Post", new_user_post_path, class: 'btn' %>
+    </div>
     <div id="posts">
         <%@posts.each do |post|%>
             <%= render 'shared/post', post: post%>
