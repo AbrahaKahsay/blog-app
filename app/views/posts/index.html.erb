@@ -10,7 +10,7 @@
     <div class="add-new-form">
       <%= link_to "Add New Post", new_user_post_path, class: 'btn' %>
     </div>
-    <div id="posts">
+    <div class="posts">
         <%@posts.each do |post|%>
             <%= render 'shared/post', post: post%>
         <%end%>
