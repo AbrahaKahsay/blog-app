@@ -9,4 +9,7 @@
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
+    <div class="add-comment">
+        <a href="<%= params[:id] %>/comments/new">Add Comment</a>
+      </div>
   </div>
