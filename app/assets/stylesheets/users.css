@@ -1,19 +1,28 @@
-.user-image {
-  width: 100px;
-  height: 100px;
+.card-container {
+  margin: 10px;
+  padding: 10px;
 }
 
 .users-list {
   display: flex;
   align-items: center;
-
-  /* justify-content: space-around; */
   flex-direction: row;
+  border: 0.5px solid black;
+  margin-bottom: 5px;
 }
 
 .image {
   display: flex;
-  flex-grow: 0.5;
+  border: 0.5px solid black;
+  margin: 2px;
+  height: 75px;
+  width: 75px;
+}
+
+.user-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .user-info {
@@ -21,6 +30,34 @@
   gap: 10%;
   align-items: center;
   flex-grow: 2;
-  border: 1px solid black;
   padding: 0 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.user-detail {
+  display: flex;
+  padding: 10px;
+  border: 1px solid blue;
+  margin-bottom: 4px;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  padding: 10px;
+  margin-bottom: 4px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  padding: 10px;
+  margin-bottom: 4px;
 }
