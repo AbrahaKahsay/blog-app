@@ -5,7 +5,7 @@
      <div class="add-comment">
         <a href="<%= params[:id] %>/comments/new">Add Comment</a>
       </div>
-     <div class="button">
+     <div class="like-button">
         <%= form_with url: user_post_likes_path(post_id: @post.id), method: :post do |form| %>
           <%= form.submit 'Like', class: 'btn' %>
         <% end %>
