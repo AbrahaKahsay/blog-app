@@ -2,6 +2,7 @@
   margin: 10px;
   padding: 10px;
 }
+
 .users-list {
   display: flex;
   align-items: center;
@@ -19,18 +20,18 @@
 }
 
 .user-image {
-  max-width:100%;
-  max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
+
 .user-info {
   display: flex;
   gap: 10%;
   align-items: center;
   flex-grow: 2;
   padding: 0 12px;
-} 
-
+}
 
 .card {
   display: flex;
@@ -44,18 +45,19 @@
   border: 1px solid blue;
   margin-bottom: 4px;
 }
- .bio {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid blue;
-  padding: 10px;
-  margin-bottom: 4px;
- }
 
- .post {
+.bio {
   display: flex;
   flex-direction: column;
   border: 1px solid blue;
   padding: 10px;
   margin-bottom: 4px;
- }
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  padding: 10px;
+  margin-bottom: 4px;
+}
