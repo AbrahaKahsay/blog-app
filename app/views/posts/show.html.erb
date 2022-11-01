@@ -1,6 +1,6 @@
 <div class="post-info">
     <div class="post-user-info">
-      <p>Post : <%= @post.title %> by <%= @post.user.name %></p>
+      <p>Post : <%= @post.title %> by <%= @user.name %></p>
       <p>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
      <div class="add-comment">
         <a href="<%= params[:id] %>/comments/new">Add Comment</a>
@@ -13,7 +13,7 @@
     </div>
     <p><%= @post.text %></p>
     <div class="comments">
-         <% @post.recent_five_comments.each do |comment| %>
+         <% @comments.includes(:user).each do |comment| %>
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>

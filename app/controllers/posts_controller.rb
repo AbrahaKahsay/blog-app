@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
     @user = User.find(params[:user_id])
+    @posts = Post.where(user_id: @user.id).includes(:comments).order(created_at: :desc)
   end
 
   def new
@@ -27,8 +27,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+    @comments = Comment.where(post_id:@post.id).includes(:user).order(created_at: :desc)
   end
 
   private
