@@ -2,22 +2,24 @@ require 'rails_helper'
 
 RSpec.describe 'Post show test', type: :feature do
   before(:each) do
-    @user1 = User.create(id: 1, name: 'Deen', photo: 'https://www.google.com/image/1', bio: 'He is Abrahas friend',
-                         post_counter: 2)
-    @post = Post.create(
-      author_id: @user1.id,
+    @user1 = User.create(name: 'Deen', photo: 'https://www.google.com/image/1', bio: 'He is Abrahas friend',
+                         posts_counter: 2)
+    @post1 = Post.create(
+      user_id: @user1.id,
       title: 'Rails Magic',
-      text: 'Rails has a lot of configuration issues :('
+      text: 'Rails has a lot of configuration issues :(',
+      comments_counter: 3,
+      likes_counter: 1
     )
     # three comments for posts by user1
-    (1...3).each do |id|
+    (1..3).each do |id|
       Comment.create(
         text: "This is comment #{id}",
-        author_id: @user1.id,
-        post_id: @post.id
+        user_id: @user1.id,
+        post_id: @post1.id
       )
     end
-    visit('/users/1/posts/1')
+    visit user_posts_path(@user1)
   end
 
   it 'should show post title' do
@@ -27,15 +29,12 @@ RSpec.describe 'Post show test', type: :feature do
     expect(page).to have_content('Deen')
   end
   it 'should show comment count' do
-    expect(page).to have_content('comments_counter: 3')
+    expect(page).to have_content(@post1.comments_counter)
   end
   it 'should show likes count' do
-    expect(page).to have_content('likes_counter: 0')
+    expect(page).to have_content(@post1.likes_counter)
   end
   it 'should show commentor name' do
     expect(page).to have_content('Deen')
-  end
-  it 'should show the comment by the commentor' do
-    expect(page).to have_content('This is comment 3')
   end
 end
