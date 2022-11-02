@@ -13,7 +13,7 @@ RSpec.describe 'Post', type: :feature do
         title: 'Rails is Magic',
         text: 'We really suffered to get this working',
         comments_counter: 1,
-        likes_counter: 1,
+        likes_counter: 1
       )
 
       @comment1 = Comment.create(
@@ -27,8 +27,8 @@ RSpec.describe 'Post', type: :feature do
       visit('/users/1/posts/1')
     end
 
-    it "should show user profile" do
-        expect(page.find('img')['src']).to have_content('https://www.google.com/image/1')
+    it 'should show user profile' do
+      expect(page.find('img')['src']).to have_content('https://www.google.com/image/1')
     end
 
     it 'should show user user name' do

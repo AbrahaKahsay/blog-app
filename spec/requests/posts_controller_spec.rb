@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'PostsControllers', type: :request do
   describe 'GET /index' do
-    before(:each) { get user_posts_path(745) }
+    before(:each) { get user_posts_path(1) }
 
     it 'is a success' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(200)
     end
 
     it "renders 'index' template" do
