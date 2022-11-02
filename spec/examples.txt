@@ -1,3 +1,0 @@
-example_id                             | status | run_time        |
--------------------------------------- | ------ | --------------- |
-./spec/views/user_index_page.rb[1:1:1] | failed | 0.26367 seconds |
