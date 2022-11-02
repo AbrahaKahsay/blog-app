@@ -24,7 +24,7 @@ RSpec.describe 'Post', type: :feature do
 
       @like1 = Like.create(user_id: 1, post_id: 1)
 
-      visit('/users/1/posts/1')
+      visit user_posts_path(@user1)
     end
 
     it 'should show user profile' do
@@ -36,7 +36,7 @@ RSpec.describe 'Post', type: :feature do
     end
 
     it 'should show the number of posts the user has written.' do
-      expect(page).to have_content('post_counter: 2')
+      expect(page).to have_content(2)
     end
     it 'should show the post title' do
       expect(page).to have_content('Rails is Magic')
