@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
     @user = User.find(params[:user_id])
+    @posts = Post.where(user_id: @user.id).order(created_at: :desc)
   end
 
   def new
-    @current_user = current_user
     @post = Post.new
-    @user = User.find(params[:user_id].to_i)
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -15,10 +14,9 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.comments_counter = 0
     @post.likes_counter = 0
-    @user = current_user
 
     if @post.save
-      redirect_to user_post_path(@user, @post)
+      redirect_to user_post_path(current_user, @post)
       flash[:error] = 'Post successfuly created!'
     else
       flash[:error] = 'Error creating post'
@@ -27,8 +25,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+    @comments = Comment.where(post_id: @post.id).includes(:user).order(created_at: :desc)
   end
 
   private

@@ -1,38 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe 'PostsControllers', type: :request do
+  before :each do
+    @user1 = User.create(name: 'Abraha', photo: 'pending', bio: 'Developer from Ethiopia', posts_counter: 1)
+    @post1 = Post.create(title: 'Post1', text: 'This is a test', user_id: @user1.id)
+  end
   describe 'GET /index' do
-    before(:each) { get user_posts_path(745) }
+    before(:each) { get user_posts_path(@user1, @post1) }
 
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
-    it "renders 'index' template" do
-      expect(response).to render_template('index')
-    end
-
-    it 'assigns all users to @posts' do
-      expect(assigns(:posts)).to eq(Post.all)
-    end
-
-    it 'matches the placeholder text with the respone body' do
-      expect(response.body).to include 'Here is a list of posts for a given user name'
-    end
+    # it "renders 'index' template" do
+    #   expect(response).to render_template('index')
+    # end
   end
   describe 'GET /show' do
-    before(:each) { get '/users/745/posts/1' }
+    before(:each) { get user_posts_path(@user1, @post1) }
 
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
-    it "renders 'show' template" do
-      expect(response).to render_template('show')
-    end
-
-    it 'matches the placeholder text with the respone body' do
-      expect(response.body).to include 'Here is a list of posts for a given user id'
-    end
+    # it "renders 'show' template" do
+    #   expect(response).to render_template('show')
+    # end
   end
 end

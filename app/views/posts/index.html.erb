@@ -16,7 +16,7 @@
         <%end%>
     </div>
     <div class="comments">
-         <% @posts.each do |comment| %>
+         <% @posts.includes(:user).each do |comment| %>
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
