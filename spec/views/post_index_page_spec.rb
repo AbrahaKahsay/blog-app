@@ -17,7 +17,7 @@ RSpec.describe 'Post', type: :feature do
       )
 
       @comment1 = Comment.create(
-        text: ' Yes rails is magic',
+        text: 'Yes rails is magic',
         post_id: @post1.id,
         user_id: @user1.id
       )
@@ -43,6 +43,25 @@ RSpec.describe 'Post', type: :feature do
     end
     it 'should show the post body' do
       expect(page).to have_content('We really suffered to get this working')
+    end
+    it 'should show first comment on a post' do
+      expect(page).to have_content(@post1.text)
+    end
+    it 'should show number of comments' do
+      expect(page).to have_content('comments: 1')
+    end
+
+    it 'should show number of likes' do
+      expect(page).to have_content('Likes: 1')
+    end
+
+    it 'redirects to the posts show page when a post is clicked' do
+      click_on 'Rails is Magic'
+      expect(page).to have_current_path user_post_path(@user1, @post1)
+    end
+
+    it 'has a pagination button' do
+      expect(page).to have_content('Pagination')
     end
   end
 end
