@@ -53,6 +53,10 @@ git clone https://github.com/AbrahaKahsay/blog-app.git
 - Twitter: [@abraha_ka](https://twitter.com/abraha_ka)
 - LinkedIn: [abraha-kahsay](https://www.linkedin.com/in/abraha-kahsay/)
 
+:man_technologist: **Muhyideen Elias** :writing_hand:
+- GitHub: [fourteen98](https://github.com/Fourteen98/)
+- Twitter: [muhiydeen](https://twitter.com/muhiydeen)
+- Linkedin: [muhyideen-elias](https://www.linkedin.com/in/muhyideen-elias-53719994/)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
