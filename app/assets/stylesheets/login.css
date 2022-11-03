@@ -1,46 +1,44 @@
 body {
-    margin-right: 2rem;
-    margin-right: 2rem;
-    /* margin: auto; */
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .title-login,
 .title-signup {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .sign-in-field,
 .sign-up-field {
-    width: 80%;
-    padding: 5px;
-    border: 1.5px solid black;
-  }
-  
-  .field {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1rem;
-    font-size: 1rem;
-    align-items: center;
-  }
+  width: 80%;
+  padding: 5px;
+  border: 1.5px solid black;
+}
 
-  .check-box {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .submit-log-in,
-  .submit-sign-up {
-    width: 80%;
-    padding: 5px;
-    margin-bottom: 20px;
-    border: 1.5px solid black;
-  }
-  
+.field {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.check-box {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-log-in,
+.submit-sign-up {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1.5px solid black;
+}
