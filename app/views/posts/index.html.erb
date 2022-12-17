@@ -7,6 +7,13 @@
         <h3 class="post-count">Number of posts: <%= @user.posts_counter %></h3>
       </div>
     </div>
+
+    <div class="Delete">
+        <% if can? :destroy, @post %>
+         <%= button_to "Delete", @post %>
+        <% end %>
+    </div>
+
     <div class="add-new-form">
       <%= link_to "Add New Post", new_user_post_path, class: 'btn' %>
     </div>

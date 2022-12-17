@@ -17,4 +17,10 @@
             <p><%= comment.user.name%> : <%= comment.text %> </p>
         <% end %>
     </div>
+    <div class="Delete">
+      <% if can? :destroy, comment %>
+        <%= button_to "Delete", comment, user_post_comment_path(current_user,@post.id,comment),
+     method: :delete%>
+        <% end %>
+    </div>
   </div>
